@@ -1,0 +1,48 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Mi Streaming</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { oscuro: '#0f172a', medio: '#1e293b', acento: '#e11d48' } } } }
+    </script>
+</head>
+<body class="bg-oscuro text-white min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-md bg-medio rounded-xl shadow-2xl overflow-hidden">
+        <div class="p-8">
+            <div class="text-center mb-8">
+                <a href="index.html" class="text-3xl font-bold text-acento">MiStreaming</a>
+                <h2 class="text-2xl font-bold mt-6">Bienvenido de nuevo</h2>
+                <p class="text-gray-400 mt-2">Ingresa a tu cuenta para continuar</p>
+            </div>
+
+            <form id="formLogin" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium mb-2">Correo Electrónico</label>
+                    <input type="email" required class="w-full bg-oscuro border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-acento">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Contraseña</label>
+                    <input type="password" required class="w-full bg-oscuro border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-acento">
+                </div>
+                <div class="flex items-center justify-between text-sm">
+                    <label class="flex items-center gap-2 text-gray-400">
+                        <input type="checkbox" class="accent-acento"> Recordarme
+                    </label>
+                    <a href="#" class="text-acento hover:underline">¿Olvidaste tu contraseña?</a>
+                </div>
+                <button type="submit" class="w-full bg-acento hover:bg-acento/90 py-3 rounded-lg font-bold text-lg transition-colors">
+                    Iniciar Sesión
+                </button>
+            </form>
+
+            <p class="text-center mt-8 text-gray-400">
+                ¿No tienes cuenta? <a href="registro.html" class="text-acento font-medium hover:underline">Regístrate gratis</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

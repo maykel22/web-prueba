@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproduciendo - Mi Streaming</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: { colors: { oscuro: '#0f172a', medio: '#1e293b', acento: '#e11d48' } } } }
+    </script>
+</head>
+<body class="bg-oscuro text-white min-h-screen">
+
+    <header class="bg-medio/90 backdrop-blur-sm border-b border-gray-800 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="text-xl font-bold text-acento flex items-center gap-2">
+                <i class="fa fa-play-circle"></i> MiStreaming
+            </a>
+            <a href="catalogo.html" class="hover:text-acento transition-colors">
+                <i class="fa fa-arrow-left mr-1"></i> Volver al Catálogo
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-6">
+        <!-- Reproductor de Video -->
+        <div class="w-full aspect-video bg-black rounded-xl overflow-hidden shadow-2xl mb-8">
+            <video controls class="w-full h-full">
+                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                Tu navegador no soporta reproducción de video.
+            </video>
+        </div>
+
+        <!-- Información del Contenido (Datos desde IMDB) -->
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="md:col-span-2">
+                <h1 id="titulo" class="text-3xl font-bold mb-2">Título de la Película</h1>
+                <div class="flex flex-wrap gap-4 text-gray-300 mb-6">
+                    <span id="anio">2024</span>
+                    <span id="duracion">120 min</span>
+                    <span id="genero">Acción • Aventura</span>
+                    <span id="puntuacion" class="text-yellow-400"><i class="fa fa-star"></i> 8.5/10 (IMDB)</span>
+                </div>
+
+                <h3 class="text-xl font-semibold mb-2">Sinopsis</h3>
+                <p id="sinopsis" class="text-gray-300 leading-relaxed mb-6">
+                    Aquí se mostrará la sinopsis oficial obtenida directamente desde la API de IMDB. El sistema trae toda la información automáticamente al agregar el contenido desde el panel de administración.
+                </p>
+
+                <h3 class="text-xl font-semibold mb-2">Reparto</h3>
+                <p id="reparto" class="text-gray-300">Actor 1, Actor 2, Actor 3, Director: Nombre del Director</p>
+            </div>
+
+            <div>
+                <div class="bg-medio rounded-xl p-4 sticky top-24">
+                    <h3 class="font-bold text-lg mb-4">Contenido Relacionado</h3>
+                    <div class="space-y-3">
+                        <a href="#" class="flex gap-3 hover:bg-oscuro p-2 rounded-lg transition-colors">
+                            <img src="https://picsum.photos/id/1024/100/150" class="w-16 h-20 object-cover rounded">
+                            <div>
+                                <h4 class="font-medium">Título Relacionado</h4>
+                                <p class="text-sm text-gray-400">2023</p>
+                            </div>
+                        </a>
+                        <a href="#" class="flex gap-3 hover:bg-oscuro p-2 rounded-lg transition-colors">
+                            <img src="https://picsum.photos/id/1025/100/150" class="w-16 h-20 object-cover rounded">
+                            <div>
+                                <h4 class="font-medium">Otra Película</h4>
+                                <p class="text-sm text-gray-400">2024</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
